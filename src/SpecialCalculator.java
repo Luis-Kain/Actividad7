@@ -2,48 +2,46 @@ import java.util.Arrays;
 
 public class SpecialCalculator {
     int numbersToGet;
-    int[] primeNumbers;
-    int[] fibonacciNumbers;
+    int[] numberArray;
 
     public void analyzeToGetPrimeNumbers(){
-        primeNumbers = new int[numbersToGet];
+        numberArray = new int[numbersToGet];
         int indexTrueValue = 0;
         for (int i = 2; indexTrueValue<numbersToGet; i++){
             if(i == 2 || i == 3 || i == 5){
-                primeNumbers[indexTrueValue] = i;
+                numberArray[indexTrueValue] = i;
                 indexTrueValue++;
             }
             else if (i%2 != 0 && i%3 != 0 && i%5 != 0 && i%7 != 0) {
-                primeNumbers[indexTrueValue] = i;
+                numberArray[indexTrueValue] = i;
                 indexTrueValue++;
             }
         }
-        printArray(primeNumbers);
+        printArray();
     }
 
     public void analyzeToGetFibonacciNumbers(){
-        fibonacciNumbers = new int[numbersToGet];
-        fibonacciNumbers[0] = 0;
-        fibonacciNumbers[1] = 1;
+        numberArray = new int[numbersToGet];
+        numberArray[0] = 0;
+        numberArray[1] = 1;
         for (int i = 1 ; i < numbersToGet-1 ; i++){
-            fibonacciNumbers[i+1] = (fibonacciNumbers[i - 1] +  fibonacciNumbers[i]);
+            numberArray[i+1] = (numberArray[i - 1] +  numberArray[i]);
         }
-        printArray(fibonacciNumbers);
+        printArray();
     }
 
-    public void printArray(int[] myArray){
-        for (int i = 0; i<myArray.length; i++) {
-            System.out.println(myArray[i]);
+    public void printArray(){
+        for (int i = 0; i<numberArray.length; i++) {
+            System.out.println(numberArray[i]);
         }
     }
 
     public SpecialCalculator() {
     }
 
-    public SpecialCalculator(int numbersToGet, int[] primeNumbers, int[] fibonacciNumbers) {
+    public SpecialCalculator(int numbersToGet, int[] NumberArray, int[] fibonacciNumbers) {
         this.numbersToGet = numbersToGet;
-        this.primeNumbers = primeNumbers;
-        this.fibonacciNumbers = fibonacciNumbers;
+        this.numberArray = fibonacciNumbers;
     }
 
     public int getNumbersToGet() {
@@ -54,28 +52,19 @@ public class SpecialCalculator {
         this.numbersToGet = numbersToGet;
     }
 
-    public int[] getPrimeNumbers() {
-        return primeNumbers;
+    public int[] getNumberArray() {
+        return numberArray;
     }
 
-    public void setPrimeNumbers(int[] primeNumbers) {
-        this.primeNumbers = primeNumbers;
-    }
-
-    public int[] getFibonacciNumbers() {
-        return fibonacciNumbers;
-    }
-
-    public void setFibonacciNumbers(int[] fibonacciNumbers) {
-        this.fibonacciNumbers = fibonacciNumbers;
+    public void setNumberArray(int[] numberArray) {
+        this.numberArray = numberArray;
     }
 
     @Override
     public String toString() {
         return "SpecialCalculator{" +
                 "numbersToGet=" + numbersToGet +
-                ", primeNumbers=" + Arrays.toString(primeNumbers) +
-                ", fibonacciNumbers=" + Arrays.toString(fibonacciNumbers) +
+                ", numberArray=" + Arrays.toString(numberArray) +
                 '}';
     }
 }

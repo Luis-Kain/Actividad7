@@ -23,7 +23,7 @@ public class Main {
                     System.out.println("favor de escoger un numero del 1 al 3");
             }
             System.out.print("¿Deseas usar la calculadora de nuevo?\n ingresa 1 para si, ingresa cualquier otro numero" +
-                    "para no:");
+                    " para no:");
             if(sc.nextInt() != 1){
                 isTrue = false;
             }
